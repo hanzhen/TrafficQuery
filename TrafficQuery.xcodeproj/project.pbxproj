@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0417591725045D00DE2E6F /* ModifyCell.m */; };
 		7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B04175D172504C000DE2E6F /* ModifyCell.xib */; };
+		7B041792172539C400DE2E6F /* fff.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B041791172539C200DE2E6F /* fff.xib */; };
 		7B07A4DC1717E01A00D2FA01 /* AddCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */; };
 		7B07A4DD1717E01A00D2FA01 /* AddCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */; };
 		7B1E6788170ACDBF0061FD4F /* search_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E6787170ACDBF0061FD4F /* search_btn.png */; };
@@ -271,6 +272,7 @@
 		7B0417581725045900DE2E6F /* ModifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyCell.h; sourceTree = "<group>"; };
 		7B0417591725045D00DE2E6F /* ModifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyCell.m; sourceTree = "<group>"; };
 		7B04175D172504C000DE2E6F /* ModifyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyCell.xib; sourceTree = "<group>"; };
+		7B041791172539C200DE2E6F /* fff.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = fff.xib; sourceTree = "<group>"; };
 		7B07A4D91717E01900D2FA01 /* AddCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCarViewController.h; sourceTree = "<group>"; };
 		7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCarViewController.m; sourceTree = "<group>"; };
 		7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCarViewController.xib; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 				7B589A66171FD56C00BFF86F /* ModifyViewController.h */,
 				7B589A67171FD56D00BFF86F /* ModifyViewController.m */,
 				7B589A68171FD56D00BFF86F /* ModifyViewController.xib */,
+				7B041791172539C200DE2E6F /* fff.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				8439C8431720360E00EFDA25 /* UserViewController.xib in Resources */,
 				7B963738172136B400F8EFFD /* AboutUSViewController.xib in Resources */,
 				7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */,
+				7B041792172539C400DE2E6F /* fff.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
