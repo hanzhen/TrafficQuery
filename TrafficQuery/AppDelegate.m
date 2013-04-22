@@ -9,21 +9,72 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize firstLaunch;
+@synthesize homeIntroduce;
+@synthesize navigationController, window;
+
 
 - (void)dealloc
 {
-    [_window release];
+    [navigationController release];
+    [window release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    //设置并存储判断值，记录程序是否是第一次进入
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]){//如果不是第一次
+        NSLog(@"everLaunched = %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]);
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"everLaunched"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    }
+    else{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunced"];
+    }
+    
+//    self.window.backgroundColor = [UIColor blackColor];
+//    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+    [window addSubview:navigationController.view];
+    
+    self.firstLaunch = YES;
+    
+   [self addHomeIntroduceWithLogoutStatus:NO];
+    
+    
+//  NSLog(@"everLaunched再一次 = %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]);
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
+
+-(void)addHomeIntroduceWithLogoutStatus:(BOOL)bLogout{
+  
+    if (nil != homeIntroduce)
+    {
+        [homeIntroduce release];
+        homeIntroduce = nil;
+    }
+    homeIntroduce = [[HomeIntroduce alloc] init];
+   // homeIntroduce = [[HomeIntroduce alloc] initWithNibName:@"HomeIntroduce" bundle:nil];
+   //iphone5
+    homeIntroduce.view.frame = CGRectMake(0, 20, 320, 460);//320*480
+    AppDelegate* del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    del.window.backgroundColor = [UIColor blackColor];
+    
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:homeIntroduce];
+    self.window.rootViewController = nav;
+    [nav setNavigationBarHidden:TRUE];
+    
+    
+    //[self.window addSubview:homeIntroduce.view];
+    
+
+   [nav release];
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

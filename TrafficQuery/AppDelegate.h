@@ -7,9 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeIntroduce.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate>{
+    BOOL firstLanch;//是否是第一次启动
+    
+    UIWindow* window;
+    UINavigationController* navigationController;
+    
+    HomeIntroduce* homeIntroduce;
+   
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic)IBOutlet UIWindow *window;
+@property (retain, nonatomic)IBOutlet UINavigationController* navigationController;
+@property (assign, nonatomic)BOOL firstLaunch;
+@property (retain, nonatomic)HomeIntroduce* homeIntroduce;
 
+-(void)addHomeIntroduceWithLogoutStatus:(BOOL)bLogout;
 @end
