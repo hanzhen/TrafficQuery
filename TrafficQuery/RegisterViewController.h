@@ -14,7 +14,11 @@
     UITextField* passwordNum;
     UITextField* againPasswordNum;
     LoginViewController* loginViewController;
+    UILabel* titleLabel;
+    NSString* titleStr;
 }
+@property(nonatomic, copy)NSString* titleStr;
+@property(nonatomic, retain)IBOutlet UILabel* titleLabel;
 @property(nonatomic, retain)IBOutlet UITextField* telphoneNum;
 @property(nonatomic, retain)IBOutlet UITextField* yanzhengNum;
 @property(nonatomic, retain)IBOutlet UITextField* passwordNum;

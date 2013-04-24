@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0417591725045D00DE2E6F /* ModifyCell.m */; };
 		7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B04175D172504C000DE2E6F /* ModifyCell.xib */; };
-		7B041792172539C400DE2E6F /* fff.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B041791172539C200DE2E6F /* fff.xib */; };
 		7B07A4DC1717E01A00D2FA01 /* AddCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */; };
 		7B07A4DD1717E01A00D2FA01 /* AddCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */; };
 		7B1E6788170ACDBF0061FD4F /* search_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E6787170ACDBF0061FD4F /* search_btn.png */; };
@@ -126,6 +125,10 @@
 		7BD276751702CB0800A1E40D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD276741702CB0800A1E40D /* QuartzCore.framework */; };
 		7BDC877C171B90AE007FF46D /* CarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC877B171B90AE007FF46D /* CarManager.m */; };
 		7BDC87BD171BD7EF007FF46D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDC87BC171BD7EE007FF46D /* Car.m */; };
+		7BE0B82F17277BF900340A7B /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0B82D17277BF900340A7B /* NewPassword.m */; };
+		7BE0B83017277BF900340A7B /* NewPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0B82E17277BF900340A7B /* NewPassword.xib */; };
+		7BE0B87A1727B3CF00340A7B /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0B8781727B3CD00340A7B /* RemindViewController.m */; };
+		7BE0B87B1727B3CF00340A7B /* RemindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0B8791727B3CE00340A7B /* RemindViewController.xib */; };
 		7BEEAEFB17150A47000CDA9B /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAE7D17150A46000CDA9B /* 0.jpg */; };
 		7BEEAEFC17150A47000CDA9B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAE7E17150A46000CDA9B /* 1.jpg */; };
 		7BEEAEFD17150A47000CDA9B /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAE7F17150A46000CDA9B /* 10.jpg */; };
@@ -272,7 +275,6 @@
 		7B0417581725045900DE2E6F /* ModifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyCell.h; sourceTree = "<group>"; };
 		7B0417591725045D00DE2E6F /* ModifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyCell.m; sourceTree = "<group>"; };
 		7B04175D172504C000DE2E6F /* ModifyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyCell.xib; sourceTree = "<group>"; };
-		7B041791172539C200DE2E6F /* fff.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = fff.xib; sourceTree = "<group>"; };
 		7B07A4D91717E01900D2FA01 /* AddCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCarViewController.h; sourceTree = "<group>"; };
 		7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCarViewController.m; sourceTree = "<group>"; };
 		7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCarViewController.xib; sourceTree = "<group>"; };
@@ -421,6 +423,12 @@
 		7BDC877B171B90AE007FF46D /* CarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarManager.m; sourceTree = "<group>"; };
 		7BDC87BB171BD7ED007FF46D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		7BDC87BC171BD7EE007FF46D /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		7BE0B82C17277BF800340A7B /* NewPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPassword.h; sourceTree = "<group>"; };
+		7BE0B82D17277BF900340A7B /* NewPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPassword.m; sourceTree = "<group>"; };
+		7BE0B82E17277BF900340A7B /* NewPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPassword.xib; sourceTree = "<group>"; };
+		7BE0B8771727B3CD00340A7B /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
+		7BE0B8781727B3CD00340A7B /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
+		7BE0B8791727B3CE00340A7B /* RemindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindViewController.xib; sourceTree = "<group>"; };
 		7BEEAE7D17150A46000CDA9B /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		7BEEAE7E17150A46000CDA9B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		7BEEAE7F17150A46000CDA9B /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -671,6 +679,9 @@
 				8439C83F1720360E00EFDA25 /* UserViewController.h */,
 				8439C8401720360E00EFDA25 /* UserViewController.m */,
 				8439C8411720360E00EFDA25 /* UserViewController.xib */,
+				7BE0B82C17277BF800340A7B /* NewPassword.h */,
+				7BE0B82D17277BF900340A7B /* NewPassword.m */,
+				7BE0B82E17277BF900340A7B /* NewPassword.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -869,7 +880,9 @@
 				7B589A66171FD56C00BFF86F /* ModifyViewController.h */,
 				7B589A67171FD56D00BFF86F /* ModifyViewController.m */,
 				7B589A68171FD56D00BFF86F /* ModifyViewController.xib */,
-				7B041791172539C200DE2E6F /* fff.xib */,
+				7BE0B8771727B3CD00340A7B /* RemindViewController.h */,
+				7BE0B8781727B3CD00340A7B /* RemindViewController.m */,
+				7BE0B8791727B3CE00340A7B /* RemindViewController.xib */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1273,7 +1286,8 @@
 				8439C8431720360E00EFDA25 /* UserViewController.xib in Resources */,
 				7B963738172136B400F8EFFD /* AboutUSViewController.xib in Resources */,
 				7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */,
-				7B041792172539C400DE2E6F /* fff.xib in Resources */,
+				7BE0B83017277BF900340A7B /* NewPassword.xib in Resources */,
+				7BE0B87B1727B3CF00340A7B /* RemindViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1318,6 +1332,8 @@
 				8439C8421720360E00EFDA25 /* UserViewController.m in Sources */,
 				7B963737172136B400F8EFFD /* AboutUSViewController.m in Sources */,
 				7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */,
+				7BE0B82F17277BF900340A7B /* NewPassword.m in Sources */,
+				7BE0B87A1727B3CF00340A7B /* RemindViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

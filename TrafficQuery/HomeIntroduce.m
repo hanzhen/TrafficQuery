@@ -19,6 +19,8 @@
 #import "carCommon.h"
 #import "LoginViewController.h"
 #import "AboutUSViewController.h"
+#import "UserViewController.h"
+
 
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
@@ -142,7 +144,7 @@
     //[self.view addSubview:bgCarSelect];
     
     
-    //要释放按纽
+    
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [selectCarBtn addTarget:self action:@selector(selectCar:) forControlEvents:UIControlEventTouchUpInside];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_arrow.png"] forState:UIControlStateNormal];
@@ -160,8 +162,6 @@
     iconImageView.image = [UIImage imageNamed:iconNumStr];
     [bgCarSelect addSubview:iconImageView];
     [iconImageView release];
-    
-
     
     
     
@@ -240,8 +240,18 @@
     
 }
 -(void)login:(id)sender{
+    
+    NSLog(@"isLogin = %d",[CarManager sharedInstance].isLogin);
+//    if([CarManager sharedInstance].isLogin){
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"]){
+        userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
+        [self.navigationController pushViewController:userViewController animated:YES];
+    }else{
+    
     loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self.navigationController pushViewController:loginViewController animated:YES];
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+    [self aboutSet:self];
 }
 -(void)aboutUS:(id)sender{
     aboutUSViewController = [[AboutUSViewController alloc] initWithNibName:@"AboutUSViewController" bundle:nil];
@@ -315,16 +325,17 @@
         NSString* mutableArr = [tempDic objectForKey:@"carNum"];
         
         [tempArr addObject:mutableArr];
-       NSLog(@"tempArr = %@",tempArr);
+        NSLog(@"tempArr = %@",tempArr);
 
-       }
-        //这个函数没有起到做用
+    }
+        
         NSLog(@"self.carNumberField.text = %@",self.carNumberField.text);
         NSLog(@"tempArr = %@",tempArr);
     if([tempArr containsObject:self.carNumberField.text]){
         //do nothing
         NSLog(@"已经存在");
-    }else{
+    }else
+    {
         [[CarManager sharedInstance].carsArr addObject:carDict];
         [[CarManager sharedInstance].carsArr writeToFile:CARLISTFILEPATH atomically:YES];
     }
@@ -388,6 +399,8 @@
     textFieldNormal.autocorrectionType = UITextAutocorrectionTypeNo;	// no auto correction support
     textFieldNormal.keyboardType = UIKeyboardTypeDefault;	// use the default type input method (entire keyboard)
     textFieldNormal.returnKeyType = UIReturnKeyDone;
+    
+//    textFieldNormal.delegate = self;
     
    // textFieldNormal.clearButtonMode = UITextFieldViewModeWhileEditing;	// has a clear 'x' button to the right
  //   textFieldNormal.delegate = self;	// let us be the delegate so we know when the keyboard's "Done" button is pressed
@@ -454,7 +467,7 @@
     pageForFirstView = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 440, 320, 10)];
     pageForFirstView.numberOfPages = 2;
     [firstShowView addSubview:pageForFirstView];
-    NSLog(@"再次调用了");
+    
     //[super viewDidLoad];
 }
 //启动程序就是删除介绍页面

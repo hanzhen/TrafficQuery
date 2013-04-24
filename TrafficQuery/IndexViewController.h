@@ -14,6 +14,7 @@
 @class LoginViewController;
 @class carCommon;
 @class AboutUSViewController;
+@class UserViewController;
 
 @interface IndexViewController : UIViewController{
     MBProgressHUD* HUD;
@@ -21,6 +22,8 @@
     AboutUSViewController* aboutUSViewController;
     LoginViewController* loginViewController;
     carCommon* managerCars;
+    
+    UserViewController* userViewController;
     
     UIView* rightView;
     BOOL show;

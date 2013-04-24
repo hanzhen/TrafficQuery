@@ -17,6 +17,8 @@
 #import "carCommon.h"
 #import "LoginViewController.h"
 #import "AboutUSViewController.h"
+#import "CarManager.h"
+#import "UserViewController.h"
 
 
 
@@ -207,13 +209,21 @@
 }
 
 -(void)login:(id)sender{
+//    if([CarManager sharedInstance].isLogin){//已登陆
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"]){
+        userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
+        [self.navigationController pushViewController:userViewController animated:YES];
+    }else{
     loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+    [self setting_pressed:self];
 }
 -(void)aboutUS:(id)sender{
     aboutUSViewController = [[AboutUSViewController alloc] initWithNibName:@"AboutUSViewController" bundle:nil];
     [self.navigationController pushViewController:aboutUSViewController animated:YES];
     [self setting_pressed:self];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,19 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MBProgressHUD;
 @class IndexViewController;
 @class RegisterViewController;
-@interface LoginViewController : UIViewController{
+@class UserViewController;
+
+@interface LoginViewController : UIViewController<UITextFieldDelegate>{
+    MBProgressHUD* HUD;
     UITextField* telphoneTextField;
-    UITextField* passworldTextField;
+    UITextField* passwordTextField;
     IndexViewController* indexViewController;
     RegisterViewController* registerViewController;
+    UIImageView* backgroundImageView;
+    UserViewController* userViewController;
 }
 
+@property(nonatomic, retain)IBOutlet UIImageView* backgroundImageView;
 @property(nonatomic, retain)IBOutlet UITextField* telphoneTextField;
 @property(nonatomic, retain)IBOutlet UITextField* passwordTextField;
 -(IBAction)login:(id)sender;
 -(IBAction)register:(id)sender;
 -(IBAction)goBack:(id)sender;
+-(IBAction)findPassword:(id)sender;
 
 @end

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 @class HomeIntroduce;
 @class CarInfo;
+@class RemindViewController;
 @interface CarInfoListViewController : UIViewController{
+    RemindViewController* remindViewController;
     CarInfo* carInfo;//cell
     NSArray* data;
     NSArray* weifaArr;
@@ -32,6 +34,7 @@
 @property(nonatomic, retain)NSArray* data;
 @property(nonatomic, retain)NSArray* weifaArr;
 @property(nonatomic, assign)HomeIntroduce* delegate;
+-(IBAction)remindBtn:(id)sender;
 
 -(NSArray*)carDataNumber:(NSString*)numberStr carJaNumber:(NSString*)carJaStr;
 

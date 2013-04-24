@@ -231,7 +231,7 @@
 					<object class="IBUILabel" id="743376474">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{132, 4}, {56, 32}}</string>
+						<string key="NSFrame">{{101, 7}, {118, 32}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="309718320"/>
@@ -389,6 +389,14 @@
 					<int key="connectionID">17</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">titleLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="743376474"/>
+					</object>
+					<int key="connectionID">21</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">goBack:</string>
 						<reference key="source" ref="556109905"/>
@@ -436,8 +444,8 @@
 							<reference ref="49797014"/>
 							<reference ref="452190830"/>
 							<reference ref="597951580"/>
-							<reference ref="743376474"/>
 							<reference ref="556109905"/>
+							<reference ref="743376474"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -525,7 +533,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">20</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -555,6 +563,7 @@
 						<string key="againPasswordNum">UITextField</string>
 						<string key="passwordNum">UITextField</string>
 						<string key="telphoneNum">UITextField</string>
+						<string key="titleLabel">UILabel</string>
 						<string key="yanzhengNum">UITextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -569,6 +578,10 @@
 						<object class="IBToOneOutletInfo" key="telphoneNum">
 							<string key="name">telphoneNum</string>
 							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="titleLabel">
+							<string key="name">titleLabel</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="yanzhengNum">
 							<string key="name">yanzhengNum</string>

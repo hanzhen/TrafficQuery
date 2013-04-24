@@ -15,6 +15,7 @@
 
 @implementation RegisterViewController
 @synthesize telphoneNum, yanzhengNum, passwordNum, againPasswordNum;
+@synthesize titleLabel, titleStr;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.titleLabel.text = titleStr;
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +101,10 @@
     return YES;
 }
 
-
+-(void)dealloc{
+    [titleStr release];
+    [super dealloc];
+}
 
 
 

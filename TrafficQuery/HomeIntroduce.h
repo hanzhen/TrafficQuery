@@ -22,6 +22,7 @@
 
 @class LoginViewController;
 @class AboutUSViewController;
+@class UserViewController;
 
 @interface HomeIntroduce : UIViewController<UIScrollViewDelegate, UINavigationBarDelegate, UITextFieldDelegate>
 {
@@ -29,6 +30,7 @@
     LoginViewController* loginViewController;
     AboutUSViewController* aboutUSViewController;
     
+    UserViewController* userViewController;
     
     UIView* rightView;
     BOOL show;

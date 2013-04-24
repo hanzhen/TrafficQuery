@@ -8,10 +8,12 @@
 
 #import "CarInfoListViewController.h"
 #import "ASIFormDataRequest.h"
+#import "ASIHTTPRequest.h"
 #import "JSONKit.h"
 #import "CarInfo.h"
 #import "HomeIntroduce.h"
 #import "IndexViewController.h"
+#import "RemindViewController.h"
 
 @interface CarInfoListViewController ()
 
@@ -132,6 +134,7 @@
     
 }
 -(NSArray*)carDataNumber:(NSString*)numberStr carJaNumber:(NSString*)carJaStr{
+    
     //测试用的
     NSString* urlString = [NSString stringWithFormat:@"http://116.255.238.8:3000/querytraffic"];
     ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
@@ -142,12 +145,24 @@
     [requestForm setPostValue:strA forKey:@"hphm"];
     [requestForm setPostValue:carJaStr forKey:@"clsbdh"];
     
-    //    [requestForm setPostValue:@"豫AGM979" forKey:@"hphm"];
+    
+       // [requestForm setPostValue:@"豫AGM979" forKey:@"hphm"];
     //    //[requestForm setPostValue:[@"豫AGM979" ] forKey:<#(NSString *)#>]
-    //    [requestForm setPostValue:@"428163" forKey:@"clsbdh"];
+     //   [requestForm setPostValue:@"428163" forKey:@"clsbdh"];
     [requestForm setPostValue:@"02" forKey:@"hpzl"];
     [requestForm setPostValue:@"VS" forKey:@"queryid"];
+    
+//    [requestForm setDelegate:self];
+//    [requestForm setDidFinishSelector:@selector(requestDone:)];
+//    [requestForm setDidFailSelector:@selector(requestWentWrong:)];
+//    [requestForm startAsynchronous];
+    
     [requestForm startSynchronous];
+    
+    
+    
+    
+    
     NSLog(@"response\n%@",[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding]);
     NSString* requestStr = [[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding];
     NSDictionary* request = [requestStr objectFromJSONString];
@@ -173,7 +188,34 @@
     NSLog(@"self.homeManyLabel.text = %@",self.homeManyLabel.text);
     return carArrays;
 }
-
+/*
+-(void)requestDone:(ASIHTTPRequest*)request{
+    NSLog(@"response\n%@",[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding]);
+    NSString* requestStr = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+    NSDictionary* requests = [requestStr objectFromJSONString];
+    NSLog(@"%@",[request class]);//JKDictionary
+    
+    //JKArray下面是
+    // NSLog(@"%@",[[[[request objectForKey:@"root"] objectForKey:@"VehSurveilInfo" ] objectForKey:@"surveil"] class] );
+    // NSLog(@"%@",[[[[request objectForKey:@"root"] objectForKey:@"VehSurveilInfo" ] objectForKey:@"surveil"] class] );
+    
+    NSArray* carArrays = [[[requests objectForKey:@"root"] objectForKey:@"VehSurveilInfo" ] objectForKey:@"surveil"];
+    // NSLog(@"carArrays = %@",carArrays);
+    NSNumber* countArr = [[[requests objectForKey:@"root"] objectForKey:@"VehSurveilInfo"] objectForKey:@"count"];
+    NSLog(@"countArr = %@", countArr);
+    NSLog(@"countArr = %@", [countArr class]);
+    NSString* homeManyStr = [NSString stringWithFormat:@"%@", countArr];
+    self.homeManyLabel.text = homeManyStr;
+    //  self.homeManyLabel.text = [NSString stringWithFormat:@"%@", countArr];
+    
+    //    NSNumber* count = [countArr objectAtIndex:0];
+    //    NSLog(@"count = %@",count);
+    
+    //    self.homeManyLabel.text = [NSString stringWithFormat:@"%@",[countArr objectAtIndex:0]];
+    NSLog(@"self.homeManyLabel.text = %@",self.homeManyLabel.text);
+    return carArrays;
+}
+*/
 
 - (void)didReceiveMemoryWarning
 {
@@ -287,6 +329,13 @@
     //    }
     return carInfo;
 }
+//在此进行逻辑判断
+-(IBAction)remindBtn:(id)sender{
+    remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
+    [self.navigationController pushViewController:remindViewController animated:YES];
+}
+
+
 -(void)dealloc{
     [countDic release];
     [super dealloc];

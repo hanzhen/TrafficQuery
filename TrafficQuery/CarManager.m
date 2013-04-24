@@ -13,6 +13,8 @@
 
 @synthesize carsDic;
 @synthesize carsArr;
+@synthesize isLogin;
+
 
 static CarManager* sharedCarsInstance = nil;
 
@@ -49,6 +51,24 @@ static CarManager* sharedCarsInstance = nil;
 -(id)autorelease{
     return self;
 }
+-(void)saveUserNameAndPwd:(NSString *)userName andPwd:(NSString *)pwd{
+    NSUserDefaults* userFile = [NSUserDefaults standardUserDefaults];
+    [userFile removeObjectForKey:@"UserName"];
+    [userFile removeObjectForKey:@"Password"];
+    [userFile setObject:userName forKey:@"UserName"];
+    [userFile setObject:pwd forKey:@"Password"];
+    [userFile synchronize];
+    
+}
+-(NSString*)getUserName{
+    NSUserDefaults* userFile = [NSUserDefaults standardUserDefaults];
+    return [userFile objectForKey:@"UserName"];
+}
+-(NSString*)getPwd{
+    NSUserDefaults* userFile = [NSUserDefaults standardUserDefaults];
+    return [userFile objectForKey:@"Password"];
+}
+
 
 -init{
     if(self = [super init]){
@@ -59,6 +79,7 @@ static CarManager* sharedCarsInstance = nil;
 -(void)setupArray{
     
     carsArr = [[NSMutableArray alloc] init];
+    isLogin = NO;
     //carsArr = [[NSMutableArray alloc] initWithContentsOfFile:CARLISTFILEPATH];
     
 //    NSDictionary* eachCar;
