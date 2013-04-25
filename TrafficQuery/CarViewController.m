@@ -39,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	
 	self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
 	
@@ -47,36 +48,11 @@
     self.tableView.backgroundColor = DARK_BACKGROUND;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-    
-	// Load the data.
- //   NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"myCar" ofType:@"plist"];
-//    NSString* dataStr = [NSString stringWithContentsOfFile:dataPath encoding:NSUTF8StringEncoding error:nil];
-//    self.data = [NSArray arrayWithContentsOfFile:dataStr];
-    //self.data = [NSArray arrayWithContentsOfFile:dataPath];
     self.data = [[NSArray alloc] initWithArray:[self carNum]];
-   // self.data = [NSArray arrayWithContentsOfFile:[self carNum]];
-  //  NSLog(@"self.data = %@",self.data);
-	
-	// create our UINib instance which will later help us load and instanciate the
-	// UITableViewCells's UI via a xib file.
-	//
-	// Note:
-	// The UINib classe provides better performance in situations where you want to create multiple
-	// copies of a nib file’s contents. The normal nib-loading process involves reading the nib file
-	// from disk and then instantiating the objects it contains. However, with the UINib class, the
-	// nib file is read from disk once and the contents are stored in memory.
-	// Because they are in memory, creating successive sets of objects takes less time because it
-	// does not require accessing the disk.
-	//
+
 	self.cellNib = [UINib nibWithNibName:@"CarCell" bundle:nil];
 }
 
-
--(void)restoreGUI{
-  
-    self.delegate.mainNavigationBar.topItem.rightBarButtonItem.target = self;
-    self.delegate.mainNavigationBar.topItem.leftBarButtonItem = BARBUTTON(@"返回", @selector(backHome:));
-}
 
 - (void)viewDidUnload
 {
@@ -120,33 +96,19 @@
     
     NSString *name=[[self.data objectAtIndex:1]objectForKey:[(dictionary1[section]) objectAtIndex:row]];
     NSLog(@"name = %@",name);
-   // [self carselect:name];
-//    self.delegate->iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",name]];
-  //-  self.delegate.iconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",name]];
+
     
     self.delegate.iconNumStr = [NSString stringWithFormat:@"%@.jpg",name];
     self.delegate.iconImageView.image = [UIImage imageNamed:self.delegate.iconNumStr];
-//    self.delegate.carNameStr = [self.data objectAtIndex:1];//进行赋值
+
     self.delegate.carNameStr = [dictionary1[section] objectAtIndex:row];
     
     self.delegate.selectIconLabel.text = self.delegate.carNameStr;
     
     [self.navigationController popViewControllerAnimated:YES];
-   // [self.navigationController pushViewController:self.delegate animated:NO];
-   //- [self.navigationController popToRootViewControllerAnimated:YES];
-   // [self.navigationController dismissModalViewControllerAnimated:NO];
-    // [name release];
+
 
 }
-//-(void)carselect:(NSString *)imagename
-//{
-//    
-//    NSString *qwer=[[NSString alloc]initWithFormat:@"%@.jpg",imagename];
-//    NSUInteger tagimage=[imagename intValue];
-//    //tmpCell.carImageView
-//    carimage.image=[UIImage imageNamed:qwer];
-//    carimage.tag=tagimage;
-//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -247,9 +209,6 @@
     
     NSString *fileName=[bundle pathForResource:[NSString stringWithFormat:@"brand_name"] ofType:@"txt"];
     
-    // NSData *data=[NSData dataWithContentsOfFile:fileName];
-    
-    //  NSString *pageSource=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *pageSource=[[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     
     NSArray *lines=[pageSource componentsSeparatedByString:@"\n"];//每一辆车为一个数组

@@ -80,30 +80,6 @@ static CarManager* sharedCarsInstance = nil;
     
     carsArr = [[NSMutableArray alloc] init];
     isLogin = NO;
-    //carsArr = [[NSMutableArray alloc] initWithContentsOfFile:CARLISTFILEPATH];
-    
-//    NSDictionary* eachCar;
-//    NSFileManager* fileManager = [NSFileManager defaultManager];
-//    if(![fileManager fileExistsAtPath:CARLISTFILEPATH]){
-//        [fileManager createFileAtPath:CARLISTFILEPATH contents:nil attributes:nil];
-//    }
-    
-////    self.carsArr = [[NSArray alloc] initWithContentsOfFile:CARLISTFILEPATH];
-//    self.carsArr = [[NSMutableArray alloc] initWithContentsOfFile:CARLISTFILEPATH];
-//    NSLog(@"调用了setupArray");
-//    NSLog(@"carsDic = %@", carsDic);
-//
-//    //车牌号唯一
-//    for(eachCar in carsArr){
-//        Car* car = [[Car alloc] initWithDictionary:eachCar];
-//        [carsDic setObject:car forKey:car.carPaiNum];
-//        NSLog(@"carsDic = %@", carsDic);
-//       // NSLog(@"调用了setupArray");
-//        [car release];
-//    }
-
-    //[self.carsArr release];
-
 }
 
 

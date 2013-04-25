@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HomeIntroduce;
 
 @interface AboutUSViewController : UIViewController{
-    HomeIntroduce* homeIntroduce;
+    
 }
 -(IBAction)goBack:(id)sender;
 @end

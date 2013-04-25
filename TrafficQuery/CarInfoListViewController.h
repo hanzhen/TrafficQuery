@@ -13,7 +13,7 @@
 @interface CarInfoListViewController : UIViewController{
     RemindViewController* remindViewController;
     CarInfo* carInfo;//cell
-    NSArray* data;
+    NSArray* data;//请求返回数据
     NSArray* weifaArr;
     UITableView* mainTabView;
     HomeIntroduce* delegate;
@@ -25,6 +25,7 @@
     int money;
     NSMutableDictionary* countDic;
     NSString* carName;
+    float n ;
 }
 @property(nonatomic, retain)NSString* carName;
 @property(nonatomic, retain)IBOutlet UILabel* whichCarLabel;
@@ -36,6 +37,6 @@
 @property(nonatomic, assign)HomeIntroduce* delegate;
 -(IBAction)remindBtn:(id)sender;
 
--(NSArray*)carDataNumber:(NSString*)numberStr carJaNumber:(NSString*)carJaStr;
+-(void)carDataNumber:(NSString*)numberStr carJaNumber:(NSString*)carJaStr;
 
 @end

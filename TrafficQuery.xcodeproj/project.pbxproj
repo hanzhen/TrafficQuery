@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B032A9B1728CAC5005F2E87 /* weifa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B032A9A1728CAC5005F2E87 /* weifa.txt */; };
 		7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0417591725045D00DE2E6F /* ModifyCell.m */; };
 		7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B04175D172504C000DE2E6F /* ModifyCell.xib */; };
-		7B07A4DC1717E01A00D2FA01 /* AddCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */; };
-		7B07A4DD1717E01A00D2FA01 /* AddCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */; };
 		7B1E6788170ACDBF0061FD4F /* search_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E6787170ACDBF0061FD4F /* search_btn.png */; };
 		7B236559171E29D5003EE002 /* carCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B236557171E29D5003EE002 /* carCommon.m */; };
 		7B23655A171E29D5003EE002 /* carCommon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B236558171E29D5003EE002 /* carCommon.xib */; };
@@ -272,12 +271,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B032A9A1728CAC5005F2E87 /* weifa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weifa.txt; sourceTree = "<group>"; };
 		7B0417581725045900DE2E6F /* ModifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyCell.h; sourceTree = "<group>"; };
 		7B0417591725045D00DE2E6F /* ModifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyCell.m; sourceTree = "<group>"; };
 		7B04175D172504C000DE2E6F /* ModifyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyCell.xib; sourceTree = "<group>"; };
-		7B07A4D91717E01900D2FA01 /* AddCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCarViewController.h; sourceTree = "<group>"; };
-		7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCarViewController.m; sourceTree = "<group>"; };
-		7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCarViewController.xib; sourceTree = "<group>"; };
 		7B1E6787170ACDBF0061FD4F /* search_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_btn.png; sourceTree = "<group>"; };
 		7B236556171E29D4003EE002 /* carCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carCommon.h; sourceTree = "<group>"; };
 		7B236557171E29D5003EE002 /* carCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carCommon.m; sourceTree = "<group>"; };
@@ -796,6 +793,7 @@
 		7BA7C451170132220004E392 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7B032A9A1728CAC5005F2E87 /* weifa.txt */,
 				7B31C88D17164E9B00A3F2BA /* images */,
 				7BEEAE7C17150A46000CDA9B /* brand_images */,
 				7B34EA721713BF19002C35AB /* top_panal_background.png */,
@@ -849,9 +847,6 @@
 				7B31C88717164BC500A3F2BA /* IndexViewController.h */,
 				7B31C88817164BC500A3F2BA /* IndexViewController.m */,
 				7B31C88917164BC500A3F2BA /* IndexViewController.xib */,
-				7B07A4D91717E01900D2FA01 /* AddCarViewController.h */,
-				7B07A4DA1717E01A00D2FA01 /* AddCarViewController.m */,
-				7B07A4DB1717E01A00D2FA01 /* AddCarViewController.xib */,
 				7B31C8F0171663E100A3F2BA /* IndexCarCell.h */,
 				7B31C8F1171663E200A3F2BA /* IndexCarCell.m */,
 				7B31C8F31716643B00A3F2BA /* IndexCarCell.xib */,
@@ -1278,7 +1273,6 @@
 				7B31C8EB17164E9C00A3F2BA /* yuan.png in Resources */,
 				7B31C8F41716643C00A3F2BA /* IndexCarCell.xib in Resources */,
 				7B31C8FE17168C0600A3F2BA /* AddButtonCell.xib in Resources */,
-				7B07A4DD1717E01A00D2FA01 /* AddCarViewController.xib in Resources */,
 				7B23655A171E29D5003EE002 /* carCommon.xib in Resources */,
 				8450F99B171EDD8500B4F937 /* LoginViewController.xib in Resources */,
 				8450F9A1171EE80B00B4F937 /* RegisterViewController.xib in Resources */,
@@ -1288,6 +1282,7 @@
 				7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */,
 				7BE0B83017277BF900340A7B /* NewPassword.xib in Resources */,
 				7BE0B87B1727B3CF00340A7B /* RemindViewController.xib in Resources */,
+				7B032A9B1728CAC5005F2E87 /* weifa.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,7 +1316,6 @@
 				7B31C88A17164BC500A3F2BA /* IndexViewController.m in Sources */,
 				7B31C8F2171663E200A3F2BA /* IndexCarCell.m in Sources */,
 				7B31C8FC17168BE100A3F2BA /* AddButtonCell.m in Sources */,
-				7B07A4DC1717E01A00D2FA01 /* AddCarViewController.m in Sources */,
 				7BDC877C171B90AE007FF46D /* CarManager.m in Sources */,
 				7BDC87BD171BD7EF007FF46D /* Car.m in Sources */,
 				846D7578171C443400E813A4 /* view.m in Sources */,

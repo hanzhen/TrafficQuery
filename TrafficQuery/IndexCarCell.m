@@ -48,16 +48,13 @@
     
     //UILabel* carNumberLabel;
     NSLog(@"carNumberLabel 中国=%@",self.carNumberLabel.text);
-    NSLog(@"carArr = %@",[CarManager sharedInstance].carsArr);//这个地方为什么为空
+    NSLog(@"carArr = %@",[CarManager sharedInstance].carsArr);//
     
   //-  NSMutableArray* carJiaName = [[NSMutableArray alloc] initWithCapacity:nums];
     
     NSString* carNumStr = [self.carNumberLabel.text substringFromIndex:1];
     NSString* carJiaStr = self.carJiaHiddenLabel.text;
     [delegate showCarInfoViewController:carNumStr carJaNumber:carJiaStr];
-    
-
-
 }
 
 

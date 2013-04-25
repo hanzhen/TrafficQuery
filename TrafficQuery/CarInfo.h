@@ -14,6 +14,8 @@
     UILabel* whyLabel;
     UILabel* fakuanLabel;
     UILabel* koufenLabel;
+    UILabel* caijueStatusLabel;
+    UILabel* jiaokuanStatusLabel;
 }
 
 @property(nonatomic, retain)IBOutlet UILabel* whenLabel;
@@ -21,5 +23,8 @@
 @property(nonatomic, retain)IBOutlet UILabel* whyLabel;
 @property(nonatomic, retain)IBOutlet UILabel* fakuanLabel;
 @property(nonatomic, retain)IBOutlet UILabel* koufenLabel;
+@property(nonatomic, retain)IBOutlet UILabel* caijueStatusLabel;
+@property(nonatomic, retain)IBOutlet UILabel* jiaokuanStatusLabel;
+-(float )setlablefont:(UILabel *)label gettext:(NSString *)text;
 
 @end

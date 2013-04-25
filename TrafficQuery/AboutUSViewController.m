@@ -7,7 +7,6 @@
 //
 
 #import "AboutUSViewController.h"
-#import "HomeIntroduce.h"
 
 @interface AboutUSViewController ()
 
@@ -30,10 +29,7 @@
     // Do any additional setup after loading the view from its nib.
 }
 -(IBAction)goBack:(id)sender{
-   // homeIntroduce = [[HomeIntroduce alloc] initWithNibName:@"HomeIntroduce" bundle:nil];
-    //[self.navigationController popViewControllerAnimated:YES];
-    
-   // [self.navigationController pushViewController:homeIntroduce animated:YES];
+
     [self.navigationController popViewControllerAnimated:YES];
     
 }

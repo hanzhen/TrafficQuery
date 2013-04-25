@@ -50,7 +50,7 @@
    
 
 }
-
+//成功
 -(void)succeed:(ASIHTTPRequest*)request{
     //成功登陆,并进行转场
     
@@ -72,40 +72,9 @@
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-(void)failed:(ASIHTTPRequest*)request{
+    
+}
 
 
 - (void)didReceiveMemoryWarning

@@ -42,7 +42,6 @@
 @property(nonatomic, retain)NSMutableDictionary* carDictionary;
 @property(nonatomic, assign)HomeIntroduce* addCarViewController;
 @property(nonatomic, assign)CarInfoListViewController* carInfoListViewController;
-
 @property(nonatomic, retain)NSMutableArray* carMutableArray;
 -(IBAction)setting_pressed:(id)sender;
 

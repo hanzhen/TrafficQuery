@@ -7,15 +7,10 @@
 //
 
 #import "HomeIntroduce.h"
-#import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
-#import "JSONKit.h"
-
 #import "CarViewController.h"
 #import "CarInfoListViewController.h"
-
 #import "CarManager.h"
-
 #import "carCommon.h"
 #import "LoginViewController.h"
 #import "AboutUSViewController.h"
@@ -30,15 +25,14 @@
 
 @implementation HomeIntroduce
 @synthesize carNumberField, carJaField;
-@synthesize mainNavigationBar, titleLabel, homeBgView;
-@synthesize leftBarTitle, target, action;
+@synthesize  titleLabel, homeBgView;
+@synthesize leftBarTitle;
 @synthesize iconImageView, iconNumStr, selectIconLabel, carNameStr;
 @synthesize weifaCount;
 @synthesize carListArr;
-//@synthesize navigationController;
 -(void)viewDidLoad{
     [super viewDidLoad];
-    //景
+    
     btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [btn_shade addTarget:self action:@selector(aboutSet:) forControlEvents:UIControlEventTouchDown];
     [btn_shade setBackgroundColor:[UIColor blackColor]];
@@ -228,9 +222,8 @@
     
     //如果为第一次进入程序，就加载介绍页面
     NSLog(@"c===%d",[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
-  //  if(![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]){
-    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])
+    {
         [self theAppFirstStartView];
     }
 }
@@ -242,13 +235,13 @@
 -(void)login:(id)sender{
     
     NSLog(@"isLogin = %d",[CarManager sharedInstance].isLogin);
-//    if([CarManager sharedInstance].isLogin){
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"]){
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"])
+    {
         userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
         [self.navigationController pushViewController:userViewController animated:YES];
-    }else{
-    
-    loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    }else
+    {
+        loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         [self.navigationController pushViewController:loginViewController animated:YES];
     }
     [self aboutSet:self];
@@ -259,8 +252,6 @@
     [self aboutSet:self];
 }
 -(IBAction)aboutSet:(id)sender{
-
-    NSLog(@"Hello,world");
     [UIView beginAnimations:@"movement" context:nil];
     [UIView setAnimationDuration:0.5f];
    // show = YES;
@@ -300,6 +291,7 @@
     if(![fileManage fileExistsAtPath:CARLISTFILEPATH]){
         [fileManage createFileAtPath:CARLISTFILEPATH contents:nil attributes:nil];
     }
+    //还要保存其它数据
     NSDictionary* carDict = [[NSDictionary alloc] initWithObjectsAndKeys:
                              self.carNumberField.text,@"carNum",
                              self.carJaField.text, @"carJiaNum",
@@ -345,10 +337,10 @@
         sleep(4);
     }completionBlock:^{
         carInfoListViewController = [[CarInfoListViewController alloc] initWithNibName:@"CarInfoListViewController" bundle:nil];
-        carInfoListViewController.data = [carInfoListViewController carDataNumber:carNumberField.text carJaNumber:carJaField.text];
-        //  NSLog(@"carInfoListViewController.data = %@",carInfoListViewController.data);
+       [carInfoListViewController carDataNumber:carNumberField.text carJaNumber:carJaField.text];
         
-        carInfoListViewController.carName = self.carNumberField.text;
+       
+        carInfoListViewController.carName = [self.carNumberField.text uppercaseString];
         NSLog(@"whichCarLabel = %@", carInfoListViewController.carName);
         /*
         carInfoListViewController.whichCarLabel.text = carNumberField.text;
@@ -411,9 +403,7 @@
 -(void)viewTapped:(UITapGestureRecognizer*)tapGr{
    
         [carNumberField resignFirstResponder];
-        //[pwdTextField becomeFirstResponder];
-   
-    
+        
         [carJaField resignFirstResponder];
    
 }
@@ -533,7 +523,10 @@ int xContentOffsetLastTime = 0;
     // Dispose of any resources that can be recreated.
 }
 -(void)dealloc{
-   // [navigationController release];
+    [carListArr release];
+    [carDataDict release];
+   
+    
     [selectIconLabel release];
     
     [super dealloc];

@@ -16,9 +16,6 @@
     carNameLabel.backgroundColor = backgroundColor;
 }
 
-
-
-
 -(void)setCarImage:(UIImage *)newImage{
     [super setCarImage:newImage];
     carImageView.image = newImage;
@@ -27,9 +24,6 @@
     [super setCarName:newName];
     carNameLabel.text = newName;
 }
-
-
-
 
 
 - (id)initWithFrame:(CGRect)frame

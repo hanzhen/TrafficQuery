@@ -49,7 +49,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.mainTableView.scrollEnabled = NO;
     //景
     btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     [btn_shade addTarget:self action:@selector(setting_pressed:) forControlEvents:UIControlEventTouchDown];
@@ -127,23 +127,21 @@
     
     self.carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
     NSLog(@"self.carMutableArray = %@", self.carMutableArray);
-    //下面的值有变化
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /*
-    self.carDictionary = [[NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH] objectAtIndex:0];
-    //self.carDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:CARLISTFILEPATH];
-    if(!self.carDictionary){//如果为空
-        self.carDictionary = [NSMutableDictionary dictionary];
-    }*/
 }
 //TableViewController
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
-    if(section == 1){
+    if(section == 1)
+    {
         return 1;
+        
     }
-    //return [self.carDictionary count];
+    if([[NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH] count] > 3)
+    {
+        self.mainTableView.scrollEnabled = YES;
+    }
+    
     return [[NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH] count];
-//return 1;
+
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell* cell;
@@ -161,11 +159,6 @@
         NSString* tempCarJiaStr;
        
         self.carDictionary = [self.carMutableArray objectAtIndex:indexPath.row];
-        
-        
-        
-        
-       // tempCarNumStr = [[self.carDictionary allKeys] objectAtIndex:indexPath.row];
         tempCarNumStr = [[self.carDictionary objectForKey:@"carNum"] uppercaseString];
         tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
         NSLog(@"tempCarJiaStr号 = %@",tempCarJiaStr);
@@ -179,7 +172,7 @@
         [yu appendString:tempCarNumStr];
         ((IndexCarCell*)cell).carNumberLabel.text = yu;
         
-//        ((IndexCarCell*)cell).carNumberLabel.text = tempCarNumStr;
+
         tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
         ((IndexCarCell*)cell).carImageView.image = [UIImage imageNamed:tempImageStr];
         ((IndexCarCell*)cell).delegate = self;
@@ -209,11 +202,13 @@
 }
 
 -(void)login:(id)sender{
-//    if([CarManager sharedInstance].isLogin){//已登陆
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"]){
+
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"])
+    {
         userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
         [self.navigationController pushViewController:userViewController animated:YES];
-    }else{
+    }else
+    {
     loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.navigationController pushViewController:loginViewController animated:YES];
     }
@@ -240,7 +235,6 @@
 }
 //返回添加新车页面
 -(void)showHomeIntroduce{
-    NSLog(@"调用了showHomeIntroduce");
     addCarViewController = [[HomeIntroduce alloc] initWithNibName:@"HomeIntroduce" bundle:nil];
     [self.navigationController pushViewController:addCarViewController animated:YES];
 }
@@ -253,7 +247,8 @@
         sleep(5);
     }completionBlock:^{
         carInfoListViewController = [[CarInfoListViewController alloc] initWithNibName:@"CarInfoListViewController" bundle:nil];
-        carInfoListViewController.data = [carInfoListViewController carDataNumber:numberStr carJaNumber:carJaStr];
+//        carInfoListViewController.data = [carInfoListViewController carDataNumber:numberStr carJaNumber:carJaStr];
+        [carInfoListViewController carDataNumber:numberStr carJaNumber:carJaStr];
         carInfoListViewController.carName = numberStr;
         [self.navigationController pushViewController:carInfoListViewController animated:YES];
         
@@ -265,7 +260,6 @@
     
 }
 -(IBAction)setting_pressed:(id)sender{
-    NSLog(@"Hello,world");
     [UIView beginAnimations:@"movement" context:nil];
     [UIView setAnimationDuration:0.5f];
     // show = YES;

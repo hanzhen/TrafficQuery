@@ -33,10 +33,7 @@
     // Configure the view for the selected state
 }
 -(IBAction)showModifyViewController:(UIButton *)sender{
-    NSLog(@"Hello, myFriend");
-    [commonDelegate showModifyVC:self.carPaiLabel.text carJia:self.carJiaLabelHidden.text ];
-    
-    
+    [commonDelegate showModifyVC:self.carPaiLabel.text carJia:self.carJiaLabelHidden.text ];    
 }
 
 -(void)dealloc{

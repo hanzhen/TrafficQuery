@@ -49,9 +49,8 @@
 
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell* cell;
+        UITableViewCell* cell;
    
-//        cell = (IndexCarCell*)[tableView dequeueReusableCellWithIdentifier:@"IndexCell"];
         cell = (ModifyCell*)[tableView dequeueReusableCellWithIdentifier:@"ModifyCell"];
     
         if(!cell)
@@ -73,19 +72,10 @@
     
         ((ModifyCell*)cell).carJiaLabelHidden.hidden = YES;
     
-    
-       // ((IndexCarCell*)cell).carNumberLabel.text = tempCarNumStr;
-       // ((IndexCarCell*)cell).carJiaHiddenLabel.hidden = YES;
-    
         tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
         ((ModifyCell*)cell).carBiaoImageView.image = [UIImage imageNamed:tempImageStr];
         ((ModifyCell*)cell).commonDelegate = self;
-    
-    
-     
-//        ((IndexCarCell*)cell).carImageView.image = [UIImage imageNamed:tempImageStr];
-//        ((IndexCarCell*)cell).commonDelegate = self;
-    
+
         
     
     return cell;
@@ -106,7 +96,6 @@
     if(sender.tag == 18){
         [self.mainTableView setEditing:YES animated:YES];
         deleteButton.tag = 05;
-        NSLog(@"进行了单击");
     }else{
         [self.mainTableView setEditing:NO animated:YES];
         deleteButton.tag = 18;
@@ -115,10 +104,7 @@
 }
 
 -(void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-   // IndexCarCell* cell = (IndexCarCell*)[tableView cellForRowAtIndexPath:indexPath];
-    // ModifyCell* cell = (ModifyCell*)[tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"indexPath = %d",indexPath.row);
-  //  NSLog(@"cell = %@", cell.carNumberLabel.text);
+    
     [self.carMutableArray removeObjectAtIndex:indexPath.row];
     [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
     [mainTableView reloadData];
@@ -152,20 +138,12 @@
             
             modifyViewController.carImageStr = [[self.carMutableArray objectAtIndex:i] objectForKey:@"carImageNum"];
             modifyViewController.carNameStr = [[self.carMutableArray objectAtIndex:i] objectForKey:@"carImage"];
-            
-//            modifyViewController.carPaiImageView.image = [UIImage imageNamed:[[self.carMutableArray objectAtIndex:i] objectForKey:@"carImageNum"]];
-//            modifyViewController.carNameLabel.text = [[self.carMutableArray objectAtIndex:i] objectForKey:@"carImage"];
-            //return;
+
         }
     }
-    
-//    NSLog(@"carNameLabel ===%@",modifyViewController.carNameLabel.text);
     [self.navigationController pushViewController:modifyViewController animated:YES];
     
-    
 }
-
-
 
 
 @end
