@@ -405,9 +405,7 @@
         [carNumberField resignFirstResponder];
         
         [carJaField resignFirstResponder];
-   
 }
-
 
 -(void)selectCar:(id)sender{
     carViewController = [[CarViewController alloc] initWithNibName:@"CarViewController" bundle:nil];

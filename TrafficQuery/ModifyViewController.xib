@@ -167,7 +167,7 @@
 					<object class="IBUIImageView" id="1013344699">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{49, 80}, {75, 66}}</string>
+						<string key="NSFrame">{{44, 71}, {75, 66}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -177,7 +177,7 @@
 					<object class="IBUITextField" id="150900799">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{49, 177}, {173, 30}}</string>
+						<string key="NSFrame">{{44, 152}, {201, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -212,7 +212,7 @@
 					<object class="IBUITextField" id="450801903">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{49, 230}, {173, 30}}</string>
+						<string key="NSFrame">{{44, 198}, {201, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -238,7 +238,7 @@
 					<object class="IBUILabel" id="397382230">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{104, 102}, {118, 21}}</string>
+						<string key="NSFrame">{{127, 93}, {118, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -263,10 +263,10 @@
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUIButton" id="264803559">
+					<object class="IBUIButton" id="917826506">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{109, 318}, {95, 44}}</string>
+						<string key="NSFrame">{{97, 275}, {95, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -370,7 +370,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">saveChange:</string>
-						<reference key="source" ref="264803559"/>
+						<reference key="source" ref="917826506"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -398,7 +398,7 @@
 							<reference ref="397382230"/>
 							<reference ref="150900799"/>
 							<reference ref="450801903"/>
-							<reference ref="264803559"/>
+							<reference ref="917826506"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -460,7 +460,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
-						<reference key="object" ref="264803559"/>
+						<reference key="object" ref="917826506"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
