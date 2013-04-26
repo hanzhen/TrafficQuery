@@ -34,9 +34,6 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-
-
-
 -(IBAction)remindBtn:(id)sender{
     NSString* urlString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/carInfo/add/"];
     ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];

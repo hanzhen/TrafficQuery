@@ -20,8 +20,6 @@
 #import "CarManager.h"
 #import "UserViewController.h"
 
-
-
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
 @interface IndexViewController ()
@@ -209,10 +207,10 @@
         [self.navigationController pushViewController:userViewController animated:YES];
     }else
     {
-    loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self.navigationController pushViewController:loginViewController animated:YES];
+        loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        [self.navigationController pushViewController:loginViewController animated:YES];
     }
-    [self setting_pressed:self];
+        [self setting_pressed:self];
 }
 -(void)aboutUS:(id)sender{
     aboutUSViewController = [[AboutUSViewController alloc] initWithNibName:@"AboutUSViewController" bundle:nil];
@@ -257,7 +255,6 @@
         HUD = nil;
         
     }];
-    
 }
 -(IBAction)setting_pressed:(id)sender{
     [UIView beginAnimations:@"movement" context:nil];

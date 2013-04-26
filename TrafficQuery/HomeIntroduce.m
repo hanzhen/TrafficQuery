@@ -235,7 +235,7 @@
 -(void)login:(id)sender{
     
     NSLog(@"isLogin = %d",[CarManager sharedInstance].isLogin);
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"])
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"])//如果已经login
     {
         userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
         [self.navigationController pushViewController:userViewController animated:YES];

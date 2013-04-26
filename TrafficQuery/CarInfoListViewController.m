@@ -149,9 +149,7 @@
     self.homeManyLabel.text = homeManyStr;
     NSLog(@"self.homeManyLabel.text = %@",self.homeManyLabel.text);
 
-        
-        
-    
+   
     self.data = carArrays;
     
     /////////////////////////////////////////
@@ -285,10 +283,6 @@
     carInfo.whenLabel.text = wfsj;    
     NSString* wfdz = [dic1 objectForKey:@"wfdz"];//违法地点
     carInfo.whereLabel.text = wfdz;
-    
-    
-    
-    
     
     carInfo.frame = CGRectMake(0, 0, carInfo.frame.size.width, carInfo.frame.size.height+n);
     return carInfo;

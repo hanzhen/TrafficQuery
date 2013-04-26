@@ -7,6 +7,7 @@
 //
 
 #import "ModifyViewController.h"
+#define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
 @interface ModifyViewController ()
 
@@ -33,6 +34,18 @@
     carPaiImageView.image = [UIImage imageNamed:carImageStr];
     carJiaTextField.text = carJiaStr;
     carPaiTextField.text = carPaiStr;
+    
+    UITapGestureRecognizer* tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    tapGr.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapGr];
+}
+//添加手势,让键盘消失
+-(void)viewTapped:(UITapGestureRecognizer*)tapGr{
+    
+    [carPaiTextField resignFirstResponder];
+    
+    [carJiaTextField resignFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +55,10 @@
 }
 -(IBAction)goBack:(UIButton *)sender{
     [self.navigationController popViewControllerAnimated:YES];
+}
+//保存数据
+-(IBAction)saveChange:(UIButton *)sender{
+    
 }
 -(void)dealloc{
     [carNameStr release];

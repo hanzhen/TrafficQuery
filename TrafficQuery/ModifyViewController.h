@@ -17,6 +17,9 @@
     NSString* carNameStr;
     NSString* carPaiStr;
     NSString* carJiaStr;
+    
+    NSMutableDictionary* carDictionary;
+    NSMutableArray* carMutableArray;
 }
 @property(nonatomic, assign)NSString* carPaiStr;
 @property(nonatomic, assign)NSString* carJiaStr;
@@ -26,6 +29,10 @@
 @property(nonatomic, retain)IBOutlet UITextField* carPaiTextField;
 @property(nonatomic, retain)IBOutlet UITextField* carJiaTextField;
 @property(nonatomic, retain)IBOutlet UIImageView* carPaiImageView;
+@property(nonatomic, retain)NSMutableDictionary* carDictionary;
+@property(nonatomic, retain)NSMutableArray* carMutableArray;
+
 -(IBAction)goBack:(UIButton*)sender;
+-(IBAction)saveChange:(UIButton*)sender;
 
 @end
